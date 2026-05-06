@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { primaryColor } from "./assets/consts";
 
 const tasks = [
@@ -7,9 +8,32 @@ const tasks = [
   {id: 4, name: `Task №4`, description:'Описание', completed: true},
   {id: 5, name: `Task №5`, description:'Описание', completed: false},
 ]
-const nextId = 3;
+let nextId = 6;
 
 function App() {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [completed, setCompleted] = useState('');
+
+  function render(){
+    return tasks
+  }
+
+  useEffect(()=> {
+    render();
+  }, [tasks])
+
+  function handleSubmit(){
+    tasks.push({
+      id: nextId++,
+      name:name,
+      description: description,
+      completed: completed
+    });
+
+    console.log(tasks);
+  }
+
   return (
     <div className="App">
     <div className="header-container">
@@ -18,11 +42,13 @@ function App() {
         <img src={primaryColor} alt="purple-square-texture"/>
       </div>
         <div className="header-container-block-1">block1</div>
-
         <div className="header-container-block-2">block2</div>
     </div>
     <div className="interactive-container">
-      <button className="submit-btn">Добавить таску</button>
+      <input src={name} placeholder="Введите имя" onChange={(e) => setName(e.target.value)}/>
+      <input src={description} placeholder="Описание" onChange={(e) => setDescription(e.target.value)}/>
+      <input src={completed} placeholder="" onChange={(e) => setCompleted(e.target.value)}/>
+      <button className="submit-btn" onClick={handleSubmit}>Добавить таску</button>
     </div>
     <div className="tasks-container">
         {tasks.map(task => (
