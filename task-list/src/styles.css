@@ -13,6 +13,12 @@
     src: url('./assets/font/Montserrat-Bold.ttf');
 }
 
+body{
+    margin: 25px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
 :root{
     --purple-color: #6966FF;
     --text-color: #161617;
@@ -22,23 +28,20 @@
 
 .App{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .header-container{
-    max-width: 700px;
     display: grid;
-    grid-template-columns: auto 80%;
+    grid-template-columns: 200px auto;
     grid-template-rows: repeat(2, 1fr);
     height: auto;    
-    
+    gap: 10px;
+    margin: 10px 0px;
 }
 
 .logo{
-    background: #6864FF;
-    background: linear-gradient(180deg, #6864FF, #9E9CFF);
     height: 200px;
     width: 200px;
     border-radius: 25px;
@@ -49,15 +52,37 @@
     color: white;
     font-size: 1.5rem;
 }
-
+.logo img{
+    object-fit: cover;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: relative;
+}
+.logo h1{
+    position: absolute;
+    z-index: 1;
+}
 .header-container-block-1{
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    font-family: MM;
+    color: var(--description-color);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
     height: 200px;
     border-radius: 25px;
+    grid-column: 2/4;
 }
 .header-container-block-2{
+    font-family: MM;
+    color: var(--description-color);
+    align-items: center;
+    display: flex;
+    justify-content: center;
     grid-column: 1/4;    
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
     height: 200px;
     border-radius: 25px;
 }
@@ -66,18 +91,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
 }
 
 .task-card{
-    max-width: 90%;
     min-width: 300px;
     margin: 10px 0px;
     height: auto;
     font-family: MM;
     color: var(--text-color);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     padding: 15px;
 }
@@ -87,5 +110,25 @@
     border-left: 4px solid var(--purple-color);
     min-height: 60px;
     padding: 10px;
+}
+
+.submit-btn{
+    width: 700px;
+    height: 50px;
+    background-image: url('./assets/images/primary-color-noise.png');
+    background-position: center;
+    background-size: 200%;
+    border: 0px;
+    font-size: 1rem;
+    font-family: MM;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 1;
+}
+.submit-btn:hover{
+    transition: 0.2s;
+    opacity: 0.8;
 }
 
