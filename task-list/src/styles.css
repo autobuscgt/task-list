@@ -14,9 +14,9 @@
 }
 
 body{
-    margin: 25px 25px;
     display: flex;
     flex-direction: column;
+    background-color: #EFEFEF;
 }
 
 :root{
@@ -29,6 +29,7 @@ body{
 .App{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
@@ -63,31 +64,38 @@ body{
 .logo h1{
     position: absolute;
     z-index: 1;
+    font-size: 2rem;
 }
 .header-container-block-1{
+    background-color: white;
     font-family: MM;
     color: var(--description-color);
     align-items: center;
     display: flex;
     justify-content: center;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1); */
     height: 200px;
     border-radius: 25px;
     grid-column: 2/4;
 }
 .header-container-block-2{
+    background-color: white;
     font-family: MM;
     color: var(--description-color);
     align-items: center;
     display: flex;
     justify-content: center;
     grid-column: 1/4;    
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1); */
     height: 200px;
     border-radius: 25px;
 }
 
 .tasks-container{
+    margin: 10px 0px;
+    background-color: var(--text-color);
+    padding: 15px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,6 +106,7 @@ body{
     min-width: 300px;
     margin: 10px 0px;
     height: auto;
+    background-color: white;
     font-family: MM;
     color: var(--text-color);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
@@ -132,3 +141,42 @@ body{
     opacity: 0.8;
 }
 
+.main-container{
+    margin: 25px 0px;
+    width: auto;
+}
+
+.search-box{
+    background-color: #EFEFEF;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-container {
+    background-color: var(--text-color);
+    padding: 50px;
+    border-radius: 600px;
+    color: #EFEFEF;
+}
+
+.navigation-container ul{
+    display: inline-flex;
+    text-align: center;
+    width: 100%;
+}
+.navigation-container li{
+    flex-grow: 1;
+    list-style-type: none;
+    font-family: MM;
+}
+
+.theme-switcher{
+    width: 70px;
+    height: 25px;
+    background-color: var(--text-color);
+    border-radius: 600px;
+}

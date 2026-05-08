@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { primaryColor } from "./assets/consts";
+import searchBox from './assets/images/search-icon.svg'
 
 const tasks = [
   {id: 1, name: `Task №1`, description:'Описание', completed: false},
@@ -36,9 +37,22 @@ function App() {
 
   return (
     <div className="App">
+    <div className="main-container">      
+    <div className="theme-switcher">
+      <button className="theme-btn-switcher">
+
+      </button>
+    </div>
+    <nav className="navigation-container">
+        <ul>
+          <li> <a>Задачи</a> </li>
+          <li> <a>Главная</a> </li>
+          <li> <a>Выход</a> </li>
+        </ul>
+      </nav>
     <div className="header-container">
       <div className="logo">
-        <h1>logo</h1>
+        <h1>Autobus</h1>
         <img src={primaryColor} alt="purple-square-texture"/>
       </div>
         <div className="header-container-block-1">block1</div>
@@ -51,6 +65,11 @@ function App() {
       <button className="submit-btn" onClick={handleSubmit}>Добавить таску</button>
     </div>
     <div className="tasks-container">
+    <div className="search-box">
+      <label>
+        <img src={searchBox} alt="search-icon"/>
+      </label>
+    </div>
         {tasks.map(task => (
           <div key={task.id} className="task-card">
             <h1>{task.name}</h1>
@@ -65,6 +84,7 @@ function App() {
     </div>
 
     </div>
+    </div>  
   );  
 }
 
